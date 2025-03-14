@@ -1,7 +1,6 @@
 'use client'
 
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import { Menu } from 'lucide-react'
 
 import ROUTES from '@/lib/routes'
 
@@ -9,7 +8,7 @@ import logo from '@/public/assets/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import Hamburger from './hamburger'
+import Hamburger from '@/components/header/hamburger'
 import { CONFIG } from '@/lib/config'
 
 export const NAV_ITEMS = [
@@ -59,7 +58,7 @@ const NavbarInitial = () => {
 	return (
 		<nav className='flex justify-between items-center xl:items-start  md:px-11 pt-4 lg:mt-8 max-w-screen-max mx-auto'>
 			<Link href={ROUTES.HOME}>
-				<Image src={logo} alt='logo' width={144} height={125} className='w-[115px] md:w-[120px]' />
+				<Image src={logo} alt={CONFIG.siteName} width={144} height={125} className='w-[115px] md:w-[120px]' />
 			</Link>
 
 			<ul className='hidden xl:flex justify-center items-center gap-6 pt-2 '>
@@ -81,20 +80,14 @@ const NavbarInitial = () => {
 			<div className='xl:hidden'>
 				<Sheet>
 					<SheetTrigger aria-label='Otwórz menu' className='bg-secondary-400 rounded-md p-2'>
-						<Hamburger/>
+						<Hamburger />
 					</SheetTrigger>
 					<SheetContent className='bg-background-dark pl-12 border-background-dark'>
 						<SheetHeader className='px-0'>
 							<SheetTitle>
 								<SheetClose asChild>
-									<Link href={ROUTES.HOME} >
-										<Image
-											src={logo}
-											alt={CONFIG.siteName}
-											width={120}
-											height={100}
-											className='w-[120px] '
-										/>
+									<Link href={ROUTES.HOME}>
+										<Image src={logo} alt={CONFIG.siteName} width={120} height={100} className='w-[120px] ' />
 									</Link>
 								</SheetClose>
 							</SheetTitle>

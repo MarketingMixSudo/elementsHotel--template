@@ -1,5 +1,6 @@
 import ROUTES from '@/lib/routes'
 import { SOCIALS } from '@/lib/socials'
+import Link from 'next/link'
 import React from 'react'
 
 const TopBar = () => {
@@ -24,9 +25,9 @@ const TopBar = () => {
 					<ul className='flex justify-center items-center gap-3'>
 						{SOCIALS.map(({ name, link, icon: Icon }) => (
 							<li key={name}>
-								<a href={link} target='_blank' rel='noopener noreferrer nofollow'>
+								<Link href={link} target='_blank' rel='noopener noreferrer nofollow'>
 									<Icon className='size-4 hover:text-primary-400 duration-300 transition-colors' />
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
