@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import logo from '@/public/assets/logo-icon.svg'
-import { CONFIG } from '@/lib/config'
+import  CONFIG  from '@/lib/config'
 import Link from 'next/link'
 import { SOCIALS } from '@/lib/socials'
 

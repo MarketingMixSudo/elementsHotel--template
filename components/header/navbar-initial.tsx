@@ -1,15 +1,15 @@
 'use client'
 
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-
-import ROUTES from '@/lib/routes'
-
-import logo from '@/public/assets/logo.png'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import Hamburger from '@/components/header/hamburger'
-import { CONFIG } from '@/lib/config'
+
+import ROUTES from '@/lib/routes'
+import CONFIG from '@/lib/config'
+
+import MobileMenu from '@/components/header/mobile-menu'
+
+import logo from '@/public/assets/logo.png'
 
 export const NAV_ITEMS = [
 	{
@@ -50,21 +50,21 @@ export const NAV_ITEMS = [
 	},
 ]
 
+export const colors = ['text-red-500', 'text-blue-500', 'text-green-500', 'text-orange-500', 'text-purple-500']
+
 const NavbarInitial = () => {
 	const pathname = usePathname()
 
-	const colors = ['text-red-500', 'text-blue-500', 'text-green-500', 'text-orange-500', 'text-purple-500']
-
 	return (
-		<nav className='flex justify-between items-center xl:items-start  md:px-11 pt-4 lg:mt-8 max-w-screen-max mx-auto'>
+		<nav className='flex justify-between items-center xl:items-start px-2 md:px-11 pt-4 lg:mt-8 max-w-screen-max mx-auto'>
 			<Link href={ROUTES.HOME} aria-label='Strona główna'>
-				<Image src={logo} alt={CONFIG.siteName} width={144} height={125} className='w-[115px] md:w-[120px]' />
+				<Image src={logo} alt={CONFIG.siteName}  className='w-[115px] md:w-[120px]' />
 			</Link>
 
 			<ul className='hidden xl:flex justify-center items-center gap-6 pt-2 '>
 				{NAV_ITEMS.map(({ name, href }) => (
 					<li key={name}>
-						<Link href={href} className='nav-link '>
+						<Link href={href} className={`   ${pathname === 'href' ? 'nav-link--active' : 'nav-link'}`}>
 							{name === 'Dzieci'
 								? name.split('').map((letter, index) => (
 										<span key={index} className={`${colors[index % colors.length]} mx-[1px]`}>
@@ -77,47 +77,7 @@ const NavbarInitial = () => {
 				))}
 			</ul>
 
-			<div className='xl:hidden'>
-				<Sheet>
-					<SheetTrigger aria-label='Otwórz menu' className='bg-secondary-400 rounded-md p-2'>
-						<Hamburger />
-					</SheetTrigger>
-					<SheetContent className='bg-background-dark pl-12 border-background-dark'>
-						<SheetHeader className='px-0'>
-							<SheetTitle>
-								<SheetClose asChild>
-									<Link href={ROUTES.HOME}>
-										<Image src={logo} alt={CONFIG.siteName} width={120} height={100} className='w-[120px] ' />
-									</Link>
-								</SheetClose>
-							</SheetTitle>
-						</SheetHeader>
-
-						<ul className='flex flex-col gap-6  '>
-							<li>
-								<SheetClose asChild>
-									<Link
-										href={ROUTES.HOME}
-										className={`${pathname === '/' ? 'nav-link--active' : 'nav-link  '} !text-xl !font-normal`}>
-										Strona Główna
-									</Link>
-								</SheetClose>
-							</li>
-							{NAV_ITEMS.map(item => (
-								<li key={item.name}>
-									<SheetClose asChild>
-										<Link
-											href={item.href}
-											className={` nav-link !text-xl !font-normal ${pathname === item.href ? 'text-primary-600' : ''}`}>
-											{item.name}
-										</Link>
-									</SheetClose>
-								</li>
-							))}
-						</ul>
-					</SheetContent>
-				</Sheet>
-			</div>
+			<MobileMenu />
 		</nav>
 	)
 }
