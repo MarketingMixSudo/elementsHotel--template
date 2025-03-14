@@ -30,7 +30,7 @@ body {
 @plugin 'tailwindcss-animate';
 
 :root {
-  --font-jost: 'Jost', sans-serif;
+	--font-jost: 'Jost', sans-serif;
 }
 
 @theme inline {
@@ -40,6 +40,8 @@ body {
 	--breakpoint-xxs: 350px;
 	--breakpoint-xs: 390px;
 	--breakpoint-max: 2200px;
+
+	--tracking-custom: 0.09em;
 
 	--color-primary-400: #cb8b55;
 	--color-primary-600: #a78467;
@@ -58,14 +60,22 @@ body {
 
 	body {
 		@apply bg-purple-700 font-text  text-font-light overflow-x-hidden;
-   
-
 	}
 }
 
 @layer utilities {
 	.link {
-		@apply text-xs font-medium tracking-wider text-font-light hover:text-primary-400 uppercase  duration-300  transition-colors;
+		@apply text-xs font-semibold tracking-custom text-font-light hover:text-primary-400 uppercase  duration-300  transition-colors;
+	}
+
+	.nav-link {
+		@apply relative text-sm font-semibold tracking-custom text-font-light w-fit block after:block after:absolute after:h-[1px] after:bg-primary-400 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left uppercase;
+	}
+
+	.nav-link--active {
+		@apply relative text-sm font-semibold tracking-custom text-primary-400 w-fit block 
+after:block after:absolute after:h-[1px] after:bg-primary-400 after:w-full 
+after:transition after:duration-300 after:origin-left uppercase;
 	}
 }
 
