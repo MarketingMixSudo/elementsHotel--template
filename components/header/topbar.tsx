@@ -25,7 +25,7 @@ const TopBar = () => {
 					<ul className='flex justify-center items-center gap-3'>
 						{SOCIALS.map(({ name, link, icon: Icon }) => (
 							<li key={name}>
-								<Link href={link} target='_blank' rel='noopener noreferrer nofollow'>
+								<Link href={link} target='_blank' rel='noopener noreferrer nofollow' aria-label={name}>
 									<Icon className='size-4 hover:text-primary-400 duration-300 transition-colors' />
 								</Link>
 							</li>

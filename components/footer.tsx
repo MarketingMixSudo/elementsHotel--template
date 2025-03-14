@@ -82,7 +82,7 @@ const Footer = () => {
 										href={link}
 										target='_blank'
 										rel='noopener noreferrer nofollow'
-										className='block border border-primary-600 rounded-full p-3 hover:border-gray-400 group duration-300'>
+										className='block border border-primary-600 rounded-full p-3 hover:border-gray-400 group duration-300' aria-label={name}>
 										<Icon className='size-4 text-primary-600 group-hover:text-gray-400 duration-300 transition-colors ' />
 									</Link>
 								</li>

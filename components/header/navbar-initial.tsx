@@ -57,7 +57,7 @@ const NavbarInitial = () => {
 
 	return (
 		<nav className='flex justify-between items-center xl:items-start  md:px-11 pt-4 lg:mt-8 max-w-screen-max mx-auto'>
-			<Link href={ROUTES.HOME}>
+			<Link href={ROUTES.HOME} aria-label='Strona główna'>
 				<Image src={logo} alt={CONFIG.siteName} width={144} height={125} className='w-[115px] md:w-[120px]' />
 			</Link>
 
