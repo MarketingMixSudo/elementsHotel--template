@@ -51,7 +51,7 @@ const Hero = () => {
 
 			<div className=' flex flex-col justify-center items-center gap-12 z-20'>
 				<h1 className='flex flex-col justify-center items-center px-5 md:px-0 font-extralight text-center '>
-					<span className='text-6xl md:text-9xl 2xl:text-[140px] md:leading-36 font-thin tracking-[-.05em]'>
+					<span className='text-6xl md:text-9xl 2xl:text-[140px] md:leading-36 font-extralight tracking-[-.05em]'>
 						ELEMENTS
 					</span>
 					<span className='text-xs md:text-lg tracking-[0.5em] uppercase'>RODZINNY HOTEL Z BASENEM W GÓRACH</span>

@@ -31,8 +31,8 @@ export default function RootLayout({
 	return (
 		<html lang='pl'>
 			<body className={`${jostSansSerif.variable}  antialiased relative`}>
-				<Image src={bgPattern} alt='bg' className='hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} />
-				<Image src={bgPatternMobile} alt='bg' className=' md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} />
+				<Image src={bgPattern} alt='bg' className='hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} priority/>
+				<Image src={bgPatternMobile} alt='bg' className=' md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} priority/>
 				<Header />
 
 				{children}

@@ -14,7 +14,7 @@ const LinkBtn = ({ href, children, variant = 'default', ...props }: LinkBtnProps
       <Link href={href} >
         <span
           className={cn(
-            'tracking-button duration-300 z-10 text-wrap text-center',
+            'tracking-button duration-300 z-10 text-wrap md:text-nowrap text-center flex justify-center items-center',
             variant === 'secondary' || variant === 'outline'
               ? 'group-hover:text-white'
               : 'group-hover:text-primary-600'
