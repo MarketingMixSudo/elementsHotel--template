@@ -9,16 +9,15 @@ const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
 
 	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 10) {
-				setIsScrolled(true)
-			} else {
-				setIsScrolled(false)
-			}
+		const checkPosition = () => {
+			setIsScrolled(window.scrollY > 10)
 		}
 
-		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
+		// Sprawdzenie pozycji na start
+		checkPosition()
+
+		window.addEventListener('scroll', checkPosition)
+		return () => window.removeEventListener('scroll', checkPosition)
 	}, [])
 
 	return (

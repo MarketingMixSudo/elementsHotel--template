@@ -10,7 +10,7 @@ const Morning = () => {
 				<h2 className='text-6xl md:text-[120px] font-light tracking-[-0.3333] leading-[.8] uppercase text-primary-600 ml-5 lg:ml-20'>
 					Poranek z <br /> widokiem
 				</h2>
-				<div className='relative h-[90vh] 2xl:h-dvh z-20'>
+				<div className='relative h-[80vh] md:h-[90vh] 2xl:h-dvh z-20'>
 					<Image src={morning} alt='morning image' fill className='w-full h-full object-cover object-center ' />
 					<div className='absolute inset-0 w-full h-full bg-background-dark/30 z-10'></div>
 
