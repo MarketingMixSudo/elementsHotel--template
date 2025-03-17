@@ -8,17 +8,17 @@ const TopBar = () => {
 		<div className=' bg-background-dark'>
 			<div className='flex justify-end items-center max-w-screen-max mx-auto px-4 md:px-11 py-2'>
 				<div className='flex justify-center items-center gap-4 max-w-screen-2xl'>
-					<Link href='tel:123456789' className='link'>
+					<Link href='tel:123456789' className='topbar-link'>
 						+48 123 456 789
 					</Link>
 
-					<Link href={ROUTES.ECO} className='hidden sm:inline-block link !text-accent-400'>
+					<Link href={ROUTES.ECO} className='hidden sm:inline-block topbar-link !text-accent-400'>
 						Eko
 					</Link>
-					<Link href={ROUTES.BLOG.LIST} className='hidden sm:inline-block link'>
+					<Link href={ROUTES.BLOG.LIST} className='hidden sm:inline-block topbar-link'>
 						Blog
 					</Link>
-					<a href={ROUTES.WALK} className='hidden sm:inline-block link'>
+					<a href={ROUTES.WALK} className='hidden sm:inline-block topbar-link'>
 						Spacer 360°
 					</a>
 

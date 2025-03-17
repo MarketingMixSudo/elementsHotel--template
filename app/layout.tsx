@@ -5,9 +5,14 @@ import './globals.css'
 
 import Header from '@/components/header/header'
 import Footer from '@/components/footer'
+import Image from 'next/image'
+
+import bgPattern from '@/public/assets/pattern.jpg'
+import bgPatternMobile from '@/public/assets/pattern-mobile.jpg'
+
 
 const jostSansSerif = Jost({
-  weight: '400',
+  weight: ['100','200','300','400','500','600','700','800'],
 	variable: '--font-jost',
 	subsets: ['latin'],
 })
@@ -25,7 +30,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='pl'>
-			<body className={`${jostSansSerif.variable}  antialiased`}>
+			<body className={`${jostSansSerif.variable}  antialiased relative`}>
+				<Image src={bgPattern} alt='bg' className='hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} />
+				<Image src={bgPatternMobile} alt='bg' className=' md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} />
 				<Header />
 
 				{children}

@@ -5,14 +5,13 @@ import  CONFIG  from '@/lib/config'
 import Link from 'next/link'
 import { SOCIALS } from '@/lib/socials'
 
-import bgPattern from '@/public/assets/bg.webp'
 
 import marketingMix from '@/public/assets/marketingmix-logo--light.svg'
 
 const Footer = () => {
 	return (
 		<footer className='pt-16 pb-32  relative px-7 2xl:px-0'>
-			<Image src={bgPattern} alt='bg' className='absolute top-0 left-0 w-full h-full object-cover -z-10' fill />
+			{/* <Image src={bgPattern} alt='bg' className='absolute top-0 left-0 w-full h-full object-cover -z-10' fill /> */}
 
 			<div className='max-w-screen-xl mx-auto '>
 				{/* LOGO */}

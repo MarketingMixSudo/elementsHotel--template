@@ -13,6 +13,8 @@ const buttonVariants = cva(
           "bg-primary-600 text-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-white before:transition-all before:duration-500 before:z-0 hover:before:w-full",
         secondary:
           "bg-white text-primary-600 border border-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-primary-600 before:transition-all before:duration-500 before:z-0 hover:before:w-full ",
+        outline:
+          "bg-transparent text-primary-600 border border-secondary-600 shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-primary-600 before:transition-all before:duration-500 before:z-0 hover:before:w-full ",
         eco:
           "bg-accent-400 text-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-white before:transition-all before:duration-500 before:z-0 hover:before:w-full",
       },
