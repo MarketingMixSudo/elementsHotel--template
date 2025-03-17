@@ -6,18 +6,18 @@ import React from 'react'
 const TopBar = () => {
 	return (
 		<div className=' bg-background-dark'>
-			<div className='flex justify-end items-center  max-w-screen-max mx-auto px-4 md:px-11 py-2'>
+			<div className='flex justify-end items-center max-w-screen-max mx-auto px-4 md:px-11 py-2'>
 				<div className='flex justify-center items-center gap-4 max-w-screen-2xl'>
-					<a href='tel:123456789' className='link'>
+					<Link href='tel:123456789' className='link'>
 						+48 123 456 789
-					</a>
+					</Link>
 
-					<a href={ROUTES.ECO} className='hidden sm:inline-block link !text-accent-400'>
+					<Link href={ROUTES.ECO} className='hidden sm:inline-block link !text-accent-400'>
 						Eko
-					</a>
-					<a href={ROUTES.BLOG.LIST} className='hidden sm:inline-block link'>
+					</Link>
+					<Link href={ROUTES.BLOG.LIST} className='hidden sm:inline-block link'>
 						Blog
-					</a>
+					</Link>
 					<a href={ROUTES.WALK} className='hidden sm:inline-block link'>
 						Spacer 360°
 					</a>

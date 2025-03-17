@@ -11,14 +11,15 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary-600 text-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-white before:transition-all before:duration-500 before:z-0 hover:before:w-full",
+        secondary:
+          "bg-white text-primary-600 border border-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-primary-600 before:transition-all before:duration-500 before:z-0 hover:before:w-full ",
         eco:
           "bg-accent-400 text-white shadow-xs relative z-10 before:absolute before:inset-0 before:right-0 before:left-auto before:w-0 before:bg-white before:transition-all before:duration-500 before:z-0 hover:before:w-full",
       },
       size: {
         default: "px-9 py-3.5",
         sm: "px-12 py-3",
-        lg: "h-10 rounded-md px-6",
-        icon: "size-9",
+        lg: "px-9 py-4",
       },
     },
     defaultVariants: {
