@@ -25,7 +25,7 @@
 
 	--color-font-light: #ffffff;
 
-	--color-background-dark: #000000;
+	--color-background-dark: #202022;
 }
 
 @layer base {
@@ -34,7 +34,7 @@
 	}
 
 	body {
-		@apply  font-text  text-font-light overflow-x-hidden tracking-custom;
+		@apply bg-background-dark  font-text  text-font-light overflow-x-hidden tracking-custom;
 	}
 }
 
