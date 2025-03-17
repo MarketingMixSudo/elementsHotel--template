@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import { ChevronDown, ChevronRight, Check } from 'lucide-react'
 import LinkBtn from '@/components/link-btn'
+
+import { ChevronDown, ChevronRight, Check } from 'lucide-react'
 
 const Panel = () => {
 	const Item = ({ children }: { children: React.ReactNode }) => {
@@ -70,10 +70,10 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<Link href='/#hotel' className='absolute left-7 bottom-6 z-20 flex justify-center items-center gap-1 group'>
+			<a href='#hotel' className='absolute left-7 bottom-6 z-20 flex justify-center items-center gap-1 group'>
 				<span className='text-sm font-semibold uppercase group-hover:text-primary-400 duration-300'>zobacz więcej</span>
 				<ChevronDown className='size-4 group-hover:text-primary-400 duration-300 ' />
-			</Link>
+			</a>
 
 			<Panel />
 

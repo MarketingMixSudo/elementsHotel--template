@@ -1,12 +1,14 @@
 import Image, { StaticImageData } from 'next/image'
 
 const TextImageBlock = ({
+    idName,
 	img,
 	alt,
 	heading,
 	children,
     reverse
 }: {
+    idName?: string
 	img:  StaticImageData | string 
 	alt: string
 	heading: string
@@ -14,7 +16,7 @@ const TextImageBlock = ({
     reverse?: boolean
 }) => {
 	return (
-		<section className='section'>
+		<section {...idName ? { id: idName } : {}}  className='section'>
 			<div className='flex flex-col lg:flex-row justify-center gap-12 xl:gap-24 max-w-screen-3xl mx-auto px-5 lg:px-0'>
 				<Image
 					src={img}

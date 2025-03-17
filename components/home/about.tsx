@@ -8,7 +8,7 @@ import about from '@/public/assets/about.jpg'
 
 const About = () => {
 	return (
-		<TextImageBlock img={about} alt='about image' heading='Hotel o doskonałej lokalizacji'>
+		<TextImageBlock idName='hotel' img={about} alt='about image' heading='Hotel o doskonałej lokalizacji'>
 			<p className='text'>
 				Zachwyć się unikatowym położeniem w uzdrowiskowej miejscowości Świeradów-Zdrój. Poznaj hotel otoczony
 				klimatyczną scenerią Gór Izerskich, z doskonałą lokalizacją blisko
