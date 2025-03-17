@@ -23,22 +23,22 @@ const Footer = () => {
 						<h2 className='text-lg  text-primary-600 uppercase'>Przydatne linki</h2>
 						<ul className='flex flex-col justify-start items-center  lg:items-start gap-3.5 mt-6'>
 							<li>
-								<Link href='#' className='link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
+								<Link href='#' className='utility-link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
 									Polityka prywatności
 								</Link>
 							</li>
 							<li>
-								<Link href='#' className='link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
+								<Link href='#' className='utility-link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
 									Kontakt
 								</Link>
 							</li>
 							<li>
-								<Link href='#' className='link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
+								<Link href='#' className='utility-link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
 									Regulaminy
 								</Link>
 							</li>
 							<li>
-								<Link href='#' className='link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
+								<Link href='#' className='utility-link !text-base !text-white/66 !font-normal hover:!text-primary-600'>
 									Kariera
 								</Link>
 							</li>
@@ -59,12 +59,12 @@ const Footer = () => {
 							<div className='flex flex-col justify-center items-center gap-1.5'>
 								<Link
 									href='#'
-									className='link !text-base !text-white/66 !font-normal !lowercase hover:!text-primary-600'>
+									className='utility-link !text-base !text-white/66 !font-normal !lowercase hover:!text-primary-600'>
 									+48 123 456 789
 								</Link>
 								<Link
 									href='#'
-									className='link !text-base !text-white/66 !font-normal !lowercase hover:!text-primary-600'>
+									className='utility-link !text-base !text-white/66 !font-normal !lowercase hover:!text-primary-600'>
 									test@test.pl
 								</Link>
 							</div>
@@ -87,15 +87,15 @@ const Footer = () => {
 								</li>
 							))}
 						</ul>
-						<div className='flex flex-col items-center lg:items-end gap-1.5 mt-10'>
-							<span className='flex justify-center items-center gap-2  link !text-base !text-white/66 !font-normal !normal-case'>
+						<div className='flex flex-col items-center lg:items-end gap-4 lg:gap-1.5 mt-10'>
+							<span className='flex justify-center items-center gap-2  utility-link !text-base !text-white/66 !font-normal !normal-case'>
 								Created by:{' '}
 								<Link href='https://marketingmix.pl'>
 									<Image src={marketingMix} alt='MarketingMix' width={100} height={30} />
 								</Link>
 							</span>
 
-							<Link href='#' className='link !text-sm !text-white/66 !font-normal !normal-case hover:!text-primary-600'>
+							<Link href='#' className='utility-link !text-sm !text-white/66 !font-normal !normal-case hover:!text-primary-600'>
 								Ustawienia cookies
 							</Link>
 						</div>

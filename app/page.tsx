@@ -1,5 +1,6 @@
 import Hero from "@/components/home/hero";
 import About from "@/components/home/about";
+import Children from "@/components/home/children";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
    <>
    <Hero/>
    <About/>
+   <Children/>
  
    </>
   );
