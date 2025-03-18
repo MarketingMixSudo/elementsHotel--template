@@ -5,6 +5,7 @@ import SpecialOffers from '@/components/home/special-offers'
 import Morning from '@/components/home/morning'
 import Faq from '@/components/home/faq'
 import Vouchers from '@/components/home/vouchers'
+import Restaurant from '@/components/home/restaurant'
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<Children />
 			<SpecialOffers />
 			<Morning />
+			<Restaurant/>
 			<Faq />
 			<Vouchers/>
 		</>

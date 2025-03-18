@@ -9,6 +9,7 @@ import Image from 'next/image'
 
 import bgPattern from '@/public/assets/pattern.jpg'
 import bgPatternMobile from '@/public/assets/pattern-mobile.jpg'
+import ScrollToTop from '@/components/scroll-to-top'
 
 
 const jostSansSerif = Jost({
@@ -37,6 +38,7 @@ export default function RootLayout({
 
 				{children}
 				<Footer />
+				<ScrollToTop/>
 			</body>
 		</html>
 	)
