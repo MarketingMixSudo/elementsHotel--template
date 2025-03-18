@@ -57,6 +57,10 @@
 		@apply relative inline-block text-primary-600  w-fit after:-mt-[2px]  after:block after:absolute after:h-[1px] after:bg-primary-600 after:w-full after:scale-x-100 hover:after:scale-x-0 after:transition after:duration-300 after:origin-left;
 	}
 
+	.link-opposite--group {
+		@apply relative inline-block text-primary-600  w-fit after:-mt-[2px]  after:block after:absolute after:h-[1px] after:bg-primary-600 after:w-full after:scale-x-0 group-hover:after:scale-x-100 after:transition after:duration-300 after:origin-left;
+	}
+
 	.section {
 		@apply pt-14 lg:pt-36;
 	}
