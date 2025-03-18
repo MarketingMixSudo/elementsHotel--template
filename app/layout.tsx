@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Jost } from 'next/font/google'
 import './globals.css'
 
-
 import Header from '@/components/header/header'
 import Footer from '@/components/footer'
 import Image from 'next/image'
@@ -10,14 +9,13 @@ import Image from 'next/image'
 import bgPattern from '@/public/assets/pattern.jpg'
 import bgPatternMobile from '@/public/assets/pattern-mobile.jpg'
 import ScrollToTop from '@/components/scroll-to-top'
-
+import LenisProvider from '@/components/lenis-provider'
 
 const jostSansSerif = Jost({
-  weight: ['100','200','300','400','500','600','700','800'],
+	weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
 	variable: '--font-jost',
 	subsets: ['latin'],
 })
-
 
 export const metadata: Metadata = {
 	title: 'Elements Hotel template',
@@ -32,13 +30,28 @@ export default function RootLayout({
 	return (
 		<html lang='pl'>
 			<body className={`${jostSansSerif.variable}  antialiased relative`}>
-				<Image src={bgPattern} alt='bg' className='hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} priority/>
-				<Image src={bgPatternMobile} alt='bg' className=' md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat' fill quality={100} priority/>
-				<Header />
-
-				{children}
-				<Footer />
-				<ScrollToTop/>
+				<LenisProvider>
+					<Image
+						src={bgPattern}
+						alt='bg'
+						className='hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat'
+						fill
+						quality={100}
+						priority
+					/>
+					<Image
+						src={bgPatternMobile}
+						alt='bg'
+						className=' md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10 bg-repeat'
+						fill
+						quality={100}
+						priority
+					/>
+					<Header />
+					{children}
+					<Footer />
+					<ScrollToTop />
+				</LenisProvider>
 			</body>
 		</html>
 	)
