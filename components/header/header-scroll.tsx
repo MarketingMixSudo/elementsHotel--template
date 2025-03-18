@@ -21,7 +21,7 @@ const HeaderScroll = () => {
 	return (
 		<nav className='flex justify-between items-center xl:items-start px-2 md:px-6 py-3  max-w-screen-max mx-auto bg-background-dark'>
 			<Link href={ROUTES.HOME} aria-label='Strona główna'>
-				<Image src={icon} alt={CONFIG.siteName} width={40} height={40} />
+				<Image src={icon} alt={CONFIG.siteName} width={40} height={40} className='size-11' />
 			</Link>
 
 			<div className='flex justify-center items-center gap-6'>

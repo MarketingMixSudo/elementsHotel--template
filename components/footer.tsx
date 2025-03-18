@@ -15,7 +15,7 @@ const Footer = () => {
 
 			<div className='max-w-screen-xl mx-auto '>
 				{/* LOGO */}
-				<Image src={logo} alt={CONFIG.siteName} width={84} height={86} className=' mx-auto' />
+				<Image src={logo} alt={CONFIG.siteName} width={84} height={86} className=' mx-auto size-20' />
 				{/* GRID */}
 				<div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0 mt-11 '>
 					{/* links */}

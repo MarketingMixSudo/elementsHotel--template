@@ -38,6 +38,9 @@ export default function RootLayout({
 						fill
 						quality={100}
 						priority
+						sizes="(max-width: 768px) 0px, 100vw"
+
+						
 					/>
 					<Image
 						src={bgPatternMobile}
@@ -46,6 +49,8 @@ export default function RootLayout({
 						fill
 						quality={100}
 						priority
+						sizes="(max-width: 768px) 100vw, 0px"
+
 					/>
 					<Header />
 					{children}

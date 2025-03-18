@@ -19,6 +19,8 @@ const Card = () => {
 				src={easter}
 				alt='morning image'
 				fill
+				sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+
 				className='w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-300 '
 			/>
 			<div className='absolute inset-0 w-full h-full bg-background-dark/50 z-10'></div>

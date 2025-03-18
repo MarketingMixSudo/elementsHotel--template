@@ -21,11 +21,11 @@ const TextImageBlock = ({
 				<Image
 					src={img}
 					alt={alt}
-					width={1024}
-					height={740}
+					
 					quality={70}
 					sizes='(max-width: 1024px) 100vw, 860px'
-					className={`max-h-[550px] lg:max-h-[740px] w-full lg:w-1/2 object-cover object-center order-1 ${reverse? '' : 'lg:order-none'}`}
+					className={`max-h-[550px] lg:max-h-[740px] w-full lg:w-1/2 object-cover object-center order-1 h-auto ${reverse? '' : 'lg:order-none'}`}
+					
 				/>
 				<div className={`flex  ${reverse? 'justify-end' : ' justify-start'} w-full lg:w-1/2  lg:mt-16   ${reverse? 'lg:pl-8' : ' lg:pr-8'}`}>
                 <div className='lg:max-w-[475px] flex flex-col justify-start  gap-6'>
