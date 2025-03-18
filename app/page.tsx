@@ -1,6 +1,7 @@
 import Hero from '@/components/home/hero'
 import About from '@/components/home/about'
 import Children from '@/components/home/children'
+import AboutSecond from '@/components/home/about-second'
 import SpecialOffers from '@/components/home/special-offers'
 import Morning from '@/components/home/morning'
 import Restaurant from '@/components/home/restaurant'
@@ -15,6 +16,7 @@ export default function Home() {
 			<Hero />
 			<About />
 			<Children />
+			<AboutSecond/>
 			<SpecialOffers />
 			<Morning />
 			<Restaurant/>

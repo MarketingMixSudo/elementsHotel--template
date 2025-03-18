@@ -17,19 +17,10 @@ const Morning = () => {
 					className='hidden lg:block absolute top-1.5 right-12 w-[470px]  object-cover object-center -z-10'
 				/>
 
-<div className='hidden lg:flex absolute -top-[125px] right-[88px] -z-10'>
-
-				<Image
-					src={pattern3}
-					alt=''
-					className='w-[85px]  z-10'
-					/>
-				<Image
-					src={pattern2}
-					alt=''
-					className=' w-[175px]   z-10'
-					/>
-					</div>
+				<div className='hidden lg:flex absolute -top-[125px] right-[88px] -z-10'>
+					<Image src={pattern3} alt='' className='w-[85px]  z-10' />
+					<Image src={pattern2} alt='' className=' w-[175px]   z-10' />
+				</div>
 				<h2 className='text-6xl md:text-[120px] font-light tracking-[-0.3333] leading-[.8] uppercase text-primary-600 ml-5 lg:ml-20'>
 					Poranek z <br /> widokiem
 				</h2>
