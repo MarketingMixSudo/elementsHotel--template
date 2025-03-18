@@ -1,10 +1,16 @@
 "use client";
 
-import {  useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
+declare global {
+  interface Window {
+    lenis?: Lenis;
+  }
+}
+
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
-  useLayoutEffect(() => { // 🔥 Używamy `useLayoutEffect` zamiast `useEffect`, aby działało od razu
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => 1 - Math.pow(1 - t, 3),
@@ -12,8 +18,9 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       gestureOrientation: "vertical",
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
-      
     });
+
+    window.lenis = lenis;
 
     const raf = (time: number) => {
       lenis.raf(time);
@@ -21,7 +28,30 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     };
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    // ⬇️ Obsługa kliknięcia w linki z #id
+    const handleAnchorClick = (event: MouseEvent) => {
+      const target = (event.target as HTMLElement).closest("a");
+
+      if (target && target.hash?.startsWith("#")) {
+        event.preventDefault();
+
+        const section = document.querySelector(target.hash) as HTMLElement | null; // 🔥 Rzutowanie
+
+        if (section) {
+          console.log("Przewijam do:", target.hash, section);
+          lenis.scrollTo(section, { duration: 1.5 });
+        } else {
+          console.warn("Nie znaleziono sekcji:", target.hash);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    return () => {
+      lenis.destroy();
+      document.removeEventListener("click", handleAnchorClick);
+    };
   }, []);
 
   return <>{children}</>;
