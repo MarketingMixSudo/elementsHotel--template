@@ -1,81 +1,39 @@
 'use client'
 
-import easter from '@/public/assets/easter.jpg'
+import React, { useRef } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper as SwiperType } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { Autoplay,  Navigation } from 'swiper/modules'
 
-import React, { useEffect } from 'react'
-import { EmblaOptionsType } from 'embla-carousel'
-import { DotButton, useDotButton } from './EmblaCarouselDotButton'
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
-import useEmblaCarousel from 'embla-carousel-react'
-import Link from 'next/link'
-import Image from 'next/image'
-
-type PropType = {
-  slides: number[]
-  options?: EmblaOptionsType
+interface CarouselProps {
+	swiperRef: React.MutableRefObject<SwiperType | null>
+	children: React.ReactNode // <-- Dodajemy obsługę dzieci
 }
 
-const Carousel: React.FC<PropType> = ({ slides, options }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options)
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi)
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
-
-  useEffect(() => {
-    if (!emblaApi) return
-
-    const interval = setInterval(() => {
-      emblaApi.scrollNext() 
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [emblaApi])
-
-  return (
-    <div className='embla'>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <Link href="#" className="embla__slide border border-white relative h-[640] flex justify-start items-end py-20 px-10" key={index}>
-                <Image src={easter} alt="" fill className='w-full h-full object-cover object-center -z-10'/>
-                <div className='absolute inset-0 w-full h-full bg-background-dark/30 '></div>
-                <h3 className='z-10 text-white'>Aktywna WIOSNA</h3>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-
-        <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={'embla__dot'.concat(
-                index === selectedIndex ? ' embla__dot--selected' : ''
-              )}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
+export default function Carousel({ swiperRef, children }: CarouselProps) {
+	return (
+		<div className='relative w-full'>
+			<Swiper
+				onSwiper={swiper => (swiperRef.current = swiper)}
+				slidesPerView={1}
+				spaceBetween={10}
+				loop={true}
+				grabCursor={true}
+				autoplay={{
+					delay: 2500,
+					disableOnInteraction: false,
+				}}
+				pagination={{ clickable: true }}
+				breakpoints={{
+					768: { slidesPerView: 2 },
+					1024: { slidesPerView: 3 },
+				}}
+				modules={[Autoplay, Navigation]}
+				className='mySwiper  text-black'>
+				{children}
+			</Swiper>
+		</div>
+	)
 }
-
-export default Carousel

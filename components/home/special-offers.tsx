@@ -1,36 +1,60 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
+import { Swiper as SwiperType } from 'swiper'
+import Carousel from '@/components/special-offers/carousel'
+import PrevButton from '@/components/special-offers/PrevButton'
+import NextButton from '@/components/special-offers/NextButton'
 import LinkBtn from '../link-btn'
-import Carousel from '../special-offers/carousel'
-import { EmblaOptionsType } from 'embla-carousel'
+import { SwiperSlide } from 'swiper/react'
+import Card from '../special-offers/card'
+import ChevronButton from '../special-offers/chevron-button'
 
-const SpecialOffers = () => {
+export default function SpecialOffersSection() {
+	const swiperRef = useRef<SwiperType | null>(null)
 
-    const OPTIONS: EmblaOptionsType = { loop: true }
-    const SLIDE_COUNT = 6
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-    
-	return <section className='section'>
+	return (
+		<section className='section'>
+			<div className='max-w-[1400px] 2xl:max-w-[1500px] mx-auto px-5 md:px-10'>
+				<div className='flex  flex-col md:flex-row justify-between items-center mb-12 lg:px-12 gap-7 md:gap-0'>
+					<div className='flex justify-between md:justify-start w-full items-center space-x-4'>
+						<h2 className='text-[32px] md:text-[38px] lg:text-[43px] text-primary-600'>Oferty specjalne</h2>
 
-<div className='max-w-screen-3xl mx-auto'>
-    <div className='flex justify-between items-center mx-20'>
+						{/* Strzałki nawigacji poza Carousel */}
+						<div className='flex md:space-x-4'>
+							<ChevronButton direction='prev' swiperRef={swiperRef} />
+							<ChevronButton direction='next' swiperRef={swiperRef} />
+						
+						</div>
+					</div>
 
-<div>
+					<LinkBtn variant='outline' href='#'>
+						Zobacz wszystkie
+					</LinkBtn>
+				</div>
 
-    <h2 className='text-[43px] text-primary-600'>Oferty specjalne </h2>
-
-
-
-
-</div>
-
-    <LinkBtn variant='outline' href="#">Zobacz wszystkie</LinkBtn>
-
-    </div>
-
-<Carousel slides={SLIDES} options={OPTIONS}/>
-</div>
-
-    </section>
+				{/* Przekazujemy ref do Carousel */}
+				<Carousel swiperRef={swiperRef}>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+					<SwiperSlide >
+						<Card />
+					</SwiperSlide>
+				</Carousel>
+			</div>
+		</section>
+	)
 }
-
-export default SpecialOffers
