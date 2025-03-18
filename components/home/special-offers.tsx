@@ -3,8 +3,7 @@
 import React, { useRef } from 'react'
 import { Swiper as SwiperType } from 'swiper'
 import Carousel from '@/components/special-offers/carousel'
-import PrevButton from '@/components/special-offers/PrevButton'
-import NextButton from '@/components/special-offers/NextButton'
+
 import LinkBtn from '../link-btn'
 import { SwiperSlide } from 'swiper/react'
 import Card from '../special-offers/card'
@@ -14,8 +13,8 @@ export default function SpecialOffersSection() {
 	const swiperRef = useRef<SwiperType | null>(null)
 
 	return (
-		<section className='section'>
-			<div className='max-w-[1400px] 2xl:max-w-[1500px] mx-auto px-5 md:px-10'>
+		<section className='section '>
+			<div className='wrapper'>
 				<div className='flex  flex-col md:flex-row justify-between items-center mb-12 lg:px-12 gap-7 md:gap-0'>
 					<div className='flex justify-between md:justify-start w-full items-center space-x-4'>
 						<h2 className='text-[32px] md:text-[38px] lg:text-[43px] text-primary-600'>Oferty specjalne</h2>

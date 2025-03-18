@@ -3,6 +3,7 @@ import About from '@/components/home/about'
 import Children from '@/components/home/children'
 import SpecialOffers from '@/components/home/special-offers'
 import Morning from '@/components/home/morning'
+import Faq from '@/components/home/faq'
 
 export default function Home() {
 	return (
@@ -12,7 +13,7 @@ export default function Home() {
 			<Children />
 			<SpecialOffers />
 			<Morning />
-
+			<Faq />
 		</>
 	)
 }
